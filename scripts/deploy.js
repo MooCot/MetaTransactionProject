@@ -4,7 +4,8 @@ async function main() {
     console.log("Deploying contracts with the account:", deployer.address);
   
     const MetaTransactionCollector = await ethers.getContractFactory("MetaTransactionCollector");
-    const metaTransactionCollector = await MetaTransactionCollector.deploy("0x24a460B3862D65A743fC86Ed926ad4E40ED2BCBE"); // Укажите адрес администратора
+    const adminAddress = process.env.ADMIN_ADDRESS;
+    const metaTransactionCollector = await MetaTransactionCollector.deploy(adminAddress);
   
     console.log("MetaTransactionCollector deployed to:", metaTransactionCollector.address);
   }
