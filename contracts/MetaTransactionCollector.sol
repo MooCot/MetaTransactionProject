@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
 import "@openzeppelin/contracts/utils/cryptography/MessageHashUtils.sol";
 
-contract MetaTransactionCollector {
+contract MetaTransactionCollector is ERC20 {
     using ECDSA for bytes32;
 
     address public admin;
